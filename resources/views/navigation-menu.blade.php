@@ -36,15 +36,15 @@
                             </x-slot>
 
                             <x-slot name="content">
+                                @if(auth()->user()->type == 'admin')
+                                <div class="block px-4 py-2 text-xs text-gray-400">
+                                    Admin İşlemleri
+                                </div>
+                                @endif
                                 <div class="w-60">
-                                    <!-- Team Management -->
-                                    <div class="block px-4 py-2 text-xs text-gray-400">
-                                        {{ __('Manage Team') }}
-                                    </div>
-
                                     <!-- Team Settings -->
-                                    <x-jet-dropdown-link href="{{ route('teams.show', Auth::user()->currentTeam->id) }}">
-                                        {{ __('Team Settings') }}
+                                    <x-jet-dropdown-link href="{{ route('quizzes.index', Auth::user()->currentTeam->id) }}">
+                                        Quizler
                                     </x-jet-dropdown-link>
 
                                     @can('create', Laravel\Jetstream\Jetstream::newTeamModel())
