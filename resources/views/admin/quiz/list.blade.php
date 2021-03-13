@@ -23,7 +23,7 @@
                       <td>{{$quiz->status}}</td>
                       <td>{{$quiz->finished_at}}</td>
                       <td>
-                          <a href="" class="btn btn-sm btn-primary fas fa-pen" title="Edit"></a>
+                          <a href="{{route('quizzes.edit', $quiz->id)}}" class="btn btn-sm btn-primary fas fa-pen" title="Edit"></a>
                           <a href="" class="btn btn-sm btn-danger fas fa-times" title="Delete"></a>
                       </td>
                   </tr>
