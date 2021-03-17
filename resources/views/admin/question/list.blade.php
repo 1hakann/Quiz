@@ -24,14 +24,14 @@
                       @foreach ($quiz -> questions as $question)
                   <tr>
                       <td>{{$question->question}}</td>
-                      <td>{{$question->image}}</td>
+                      <td>@if($question->image)<a class="btn btn-sm btn-light" target="_blank" href="{{asset($question->image)}}">Görüntüle</a>@endif</td>
                       <td>{{$question->answer1}}</td>
                       <td>{{$question->answer2}}</td>
                       <td>{{$question->answer3}}</td>
                       <td>{{$question->answer4}}</td>
                       <td class="text-success">{{substr($question->correct_answer,-1)}}</td>
                       <td>
-                          <a href="{{route('quizzes.edit', $quiz->id)}}" class="btn btn-sm btn-primary fas fa-pen" title="Edit"></a>
+                          <a href="{{route('questions.edit', [$quiz->id, $question->id])}}" class="btn btn-sm btn-primary fas fa-pen" title="Edit"></a>
                           <a href="{{route('quizzes.destroy', $quiz->id)}}" class="btn btn-sm btn-danger fas fa-times" title="Delete"></a>
                       </td>
                   </tr>
