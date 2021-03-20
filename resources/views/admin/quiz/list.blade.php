@@ -5,8 +5,28 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">
-                <a href="{{route('quizzes.create')}}" class="btn btn-sm btn-primary fas fa-plus">Quiz Oluştur</a>
+                <a href="{{route('quizzes.create')}}" class="btn btn-sm btn-primary fas fa-plus float-right">Quiz Oluştur</a>
             </h5>
+            <form action="" method="GET">
+                <div class="form-row">
+                    <div class="col-md-2">
+                        <input type="text" name="title" placeholder="Quiz Adı" value="{{request()->get('title')}}" class="form-control">
+                    </div>
+                        <div class="col-md-2">
+                            <select class="form-control" name="status" id="" onchange="this.form.submit()">
+                                <option>Durum Seçiniz</option>
+                                <option value="published" @if(request()->get('status') === 'published') selected @endif>Aktif</option>
+                                <option value="passive" @if(request()->get('status') === 'passive') selected @endif>Pasif</option>
+                                <option value="draft" @if(request()->get('status') === 'draft') selected @endif>Taslak</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            @if(request()->get('title') || request()->get('status'))
+                            <a href="{{route('quizzes.index')}}" class="btn btn-secondary">Sıfırla</a>
+                            @endif
+                        </div>
+                    </div>
+            </form>
             <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -47,7 +67,7 @@
                       @endforeach
                 </tbody>
               </table>
-              {{$quizzes->links()}}
+              {{$quizzes->withQueryString()->links()}}
               
         </div>
     </div>
