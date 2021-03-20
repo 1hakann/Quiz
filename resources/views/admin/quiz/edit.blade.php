@@ -25,7 +25,7 @@
                     <option @if ($quiz->questions_count < 5) disabled @endif @if($quiz->status === 'published') selected @endif value="published">Aktif</option>
                  
                     <option @if($quiz->status === 'passive') selected @endif value="passive">Pasif</option>
-                    <option @if($quiz->status === 'draft') selected @endif value="draf">Taslak</option>
+                    <option @if($quiz->status === 'draft') selected @endif value="draft">Taslak</option>
                 </select>
             </div>
             <div class="form-group">
