@@ -5,10 +5,9 @@
     <div class="card">
         <div class="card-body">
             <p class="card-text">
-                <form action="" method="POST">
+                <form method="POST" enctype="multipart/form-data" action="{{route('quiz.result',$quiz->slug)}}">
+                   
                     @csrf
-
-                </form>
                 @foreach ($quiz -> questions as $question )
 
                 <strong>#{{$loop->iteration}}</strong>{{$question->question}}
@@ -36,6 +35,7 @@
                     
                 @endforeach
                 <button type="submit" class="btn btn-success btn-sm btn-block">Sınavı Bitir</button>
+            </form>
             </p>
        
         </div>
