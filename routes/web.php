@@ -28,7 +28,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('quiz/{slug}', [MainController::class, 'quiz'])->name('quiz.join');    
     Route::post('quiz/{slug}/result', [MainController::class, 'result'])->name('quiz.result');    
 
+  
 });
+
+
 
 
 Route::group(['middleware' => ['auth','isAdmin'], 'prefix'=>'admin'], function() {
