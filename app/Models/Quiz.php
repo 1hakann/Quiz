@@ -14,7 +14,9 @@ class Quiz extends Model
 
     protected $fillable = ['title','description','slug','status','finished_at'];
 
-    protected $dates= ['finished_at']; 
+    protected $dates = ['finished_at']; 
+
+    protected $appends = ['details'];
 
     public function questions()
     {
@@ -33,5 +35,28 @@ class Quiz extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function my_result()
+    {
+        return $this->hasOne('App\Models\Result')->where('user_id', auth()->user()->id);
+    }
+
+    public function results()
+    {
+        return $this->hasMany('App\Models\Result');
+    }
+
+    public function getDetailsAttribute()
+    {
+        if($this->results()->count()>0)
+        {
+            return [
+                'average' => round($this->results()->avg('point')),
+                'join_count' => $this->results()->count()
+            ];
+        }
+        return null;
+      
     }
 }
