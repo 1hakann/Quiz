@@ -59,4 +59,9 @@ class Quiz extends Model
         return null;
       
     }
+
+    public function topTen()
+    {
+        return $this->results()->orderByDesc('point')->take(10);
+    }
 }
