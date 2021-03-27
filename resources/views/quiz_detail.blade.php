@@ -10,6 +10,11 @@
                     @if($quiz->my_result)
                     <ul class="list-group">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Sıralamanız
+                            <span title="" class="badge badge-secondary badge-pill">#{{$quiz->my_rank}}</span>
+                        </li>
+                   
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
                             Puan
                             <span title="" class="badge badge-primary badge-pill">{{$quiz->my_result->point}}</span>
                         </li>
@@ -52,8 +57,9 @@
                                     @foreach ($quiz->topTen as $result)
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
                                     <strong class="h3">{{$loop->iteration}}.</strong>
-                                    <img src="{{$result->user->profile_photo_url}}" alt="" class="h-8 w-8 rounded-full">{{$result->user->name}}
-                                    <span class="badge badge-success badge-pill">{{$result->point}}</span>
+                                    <img src="{{$result->user->profile_photo_url}}" alt="" class="h-8 w-8 rounded-full">
+                                    <span @if(auth()->user()->id==$result->user_id) class="text-success" @endif>{{$result->user->name}} </span>                                   
+                                    <span class="badge badge-success badge-pill"> {{$result->point}}</span>
                                     </li>                                        
                                     @endforeach
                                 </ul>
