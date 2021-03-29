@@ -21,7 +21,20 @@
             </div>
         </div>
         <div class="md-4">
-            Deneme
+            <div class="card ml-2" style="width:23rem;">
+                <div class="header pl-2">
+                    Quiz Sonuçları
+                </div>
+                    <ul class="list-group list-group-flush">
+                        @foreach ($results as $result)
+                       
+                        <li class="list-group-item">
+                            <strong>{{$result->point}}</strong><a href="{{route('quiz.detail',$result->quiz->slug)}}">
+                            {{$result->quiz->title}}
+                        </li></a>
+                        @endforeach
+                  </ul>
+            </div>
         </div>
     </div>
 </x-app-layout>
