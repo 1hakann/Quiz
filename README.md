@@ -29,15 +29,11 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## Views from the Application
 
-<img src="https://imgur.com/SfHgXgD" alt="quiz1-pic">
+<img src="https://www.linkpicture.com/q/Screenshot-from-2021-04-18-02-08-10.png" alt="quiz1-pic">
 
-<img src="https://imgur.com/It2bRMJ" alt="quiz2-pic">
+<img src="https://www.linkpicture.com/q/Screenshot-2021-04-18-02-08-10.png" alt="quiz2-pic">
 
-<img src="https://imgur.com/o9c2Fww" alt="quiz3-pic">
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<img src="https://www.linkpicture.com/q/2021-04-18-02-08-10.png" alt="quiz3-pic">
 
 ## License
 
