@@ -11,9 +11,15 @@
 
 This project is a Quiz application built with Laravel. It was created using fictional data. It is designed as a simple project draft in which the users participate in the quizzes to answer and share the statistics after the quizzes are completed. Editors with administrative authority can prepare questions and create quizzes. They can keep them inactive, in draft form, confidential from web users, or publish them to expire at a later date. Each quiz has statistics on its own page. In addition, information such as the rate at which each problem was solved correctly is included in the quizzes' own pages. The information of the highest rated users is also published on the same page. In the project where many features of Laravel were used, bootstrap was used as a style and also JQuery was used for some functional features.
 
-# Using and Downloading App
+## Using and Downloading App
 
-Replace the env.example file with your database information. Next copy your .env file to the project. Then create a database called quiz. After Then run the php artisan migrate command. Finally, add your data to your tables with the php artisan migrate: fresh --seed command. As a last step, select one of the admin users from the users table in the quiz database and log in to the system. Use 'password' as your password. Now you can examine the project with peace of mind :)
+First of all, replace the env.example file with your database information.</br>
+Next copy your .env file to the project.</br>
+Then create a database called quiz.</br>
+After Then run the php artisan migrate command.</br> 
+Finally, add your data to your tables with the php artisan migrate: fresh --seed command.</br>
+As a last step, select one of the admin users from the users table in the quiz database and log in to the system.</br>
+Use 'password' as your password. Now you can examine the project with peace of mind :)
 
 ## Learning Laravel
 
@@ -23,11 +29,11 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 
 ## Views from the Application
 
-https://imgur.com/SfHgXgD
+<img src="https://imgur.com/SfHgXgD" alt="quiz1-pic">
 
-https://imgur.com/It2bRMJ
+<img src="https://imgur.com/It2bRMJ" alt="quiz2-pic">
 
-https://imgur.com/o9c2Fww
+<img src="https://imgur.com/o9c2Fww" alt="quiz3-pic">
 
 ## Security Vulnerabilities
 
